@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🇯🇵 Japan Halal Travel Assistant 🇯🇵</title>
+
+  <!-- Japan Theme Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Google Fonts: Noto Sans JP & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <div class="app-layout">
+    <!-- Sidebar for Sessions -->
+    <aside class="sidebar">
+      <h2>Chat Sessions</h2>
+      <div class="sidebar-actions">
+        <button id="new-session-btn" class="sidebar-btn" type="button">+ New Session</button>
+        <button id="clear-all-btn" class="sidebar-btn danger-btn" type="button">Trash All</button>
+      </div>
+      <div id="session-list" class="session-list">
+        <!-- Session items will be dynamically injected here -->
+      </div>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <main class="main-content">
+      <div class="container">
+        <h1>🇯🇵 Japan Halal Travel Assistant 🇯🇵</h1>
+        <div id="chat-box" class="chat-box"></div>
+
+        <!-- File Preview Area -->
+        <div id="file-preview-container" class="file-preview-container hidden">
+          <span id="file-name" class="file-name"></span>
+          <button type="button" id="remove-file-btn" class="remove-file-btn">&times;</button>
+        </div>
+
+        <form id="chat-form">
+          <button type="button" id="attach-btn" class="attach-btn"
+            title="Attach file (Image, Audio, Video, PDF)">📎</button>
+          <input type="file" id="file-input" accept="image/*,video/*,audio/*,application/pdf" style="display: none;" />
+
+          <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- Help Button -->
+  <button id="help-btn" class="help-btn" title="How to use this chatbot">❓</button>
+
+  <!-- Help Modal -->
+  <div id="help-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>How to Use the Japan Halal Travel Assistant 🇯🇵🌸</h2>
+        <button id="close-modal-btn" class="close-modal-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3>What can I ask?</h3>
+        <ul>
+          <li><strong>Find Halal Food:</strong> "Where can I find Halal ramen in Shinjuku, Tokyo?" or "Are there any
+            Muslim-friendly sushi spots in Kyoto?"</li>
+          <li><strong>Locate Prayers Spaces:</strong> "Where is the nearest masjid to Osaka Castle?" or "Is there a
+            prayer room in Narita Airport?"</li>
+          <li><strong>Get Prayer Times:</strong> "What time is Maghrib today in Kyoto?" or "What is the sholat schedule
+            for Tokyo?"</li>
+          <li><strong>Itinerary Planning:</strong> "Can you build a 3-day Muslim-friendly itinerary for Sapporo?"</li>
+        </ul>
+
+        <h3>Multi-modal Attachments 📎</h3>
+        <p>You can upload images, PDFs, audio, or video alongside your question!</p>
+        <ul>
+          <li><strong>Translate Menus:</strong> Attach a picture of a restaurant menu and ask: "Is anything on this menu
+            Halal or vegetarian?"</li>
+          <li><strong>Ingredient Checks:</strong> Attach a photo of a snack's ingredients and ask: "Does this contain
+            alcohol or pork derivatives?"</li>
+        </ul>
+
+        <h3>Chat Sessions 🗂</h3>
+        <p>Your conversations are saved securely in your browser! Use the sidebar to switch between different trip
+          plans, or hit <strong>+ New Session</strong> to start fresh.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
