@@ -518,3 +518,94 @@ button[type="submit"]:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 12px rgba(211, 47, 47, 0.3);
 }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar h2 {
+    font-size: 1rem;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+  }
+
+  .sidebar-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .sidebar-btn {
+    flex: 1;
+    padding: 8px;
+    font-size: 0.9rem;
+    margin: 0 4px;
+  }
+
+  .session-list {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 5px;
+  }
+
+  .session-item {
+    min-width: 120px;
+    margin-right: 8px;
+    padding: 8px 10px;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+
+  .container {
+    height: 100%;
+    border-radius: 0;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .chat-box {
+    padding: 15px;
+  }
+
+  .message {
+    max-width: 85%;
+    padding: 10px 14px;
+  }
+
+  form {
+    padding: 10px 15px 15px 15px;
+  }
+
+  input[type="text"] {
+    padding: 10px 15px;
+  }
+
+  button[type="submit"] {
+    padding: 10px 16px;
+  }
+
+  .help-btn {
+    bottom: 80px;
+    /* Lift above mobile keyboard/nav */
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}
